@@ -1,0 +1,128 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Knewave');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+// Reset
+@import 'reset';
+
+// Variables
+@import 'variables';
+
+
+body {
+    font-family: "Merriweather", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    background: url("../../public/images/bg.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#app {
+    position: relative;
+    background: white;
+    min-height: 85vh;
+    height: auto;
+    width: 80%;
+    padding: 15px;
+    background: $glass-gradient;
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    z-index: 2;
+    display: flex;
+    margin: 50px 0;
+
+    @media screen and (max-width: 512px) {
+        padding: 10px;
+    }
+}
+
+.circle1, .circle2 {
+    background: white;
+    background: $glass-gradient;
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle1 {
+    top: 3%;
+    right: 7%;
+}
+
+.circle2 {
+    bottom: 10%;
+    left: 7%;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.row.submit {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 40%;
+
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 70px;
+    }
+}
+
+.page-title {
+
+    @media screen and (max-width: 1000px) {
+        text-align: center;
+        font-size: 35px;
+    }
+}
+
+.videobg-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.page-enter-active {
+    animation: mounting .3s;
+    animation-delay: .3s;
+    opacity: 0;
+}
+
+.page-leave-active {
+    animation: unmounting .3s;
+}
+
+@keyframes unmounting {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes mounting {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
